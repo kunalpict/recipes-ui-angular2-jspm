@@ -1,0 +1,40 @@
+<div class="">
+	<div class="row">
+	  <card [info]="recipe.info"></card>		
+	</div>
+	<div class="row">
+		<toolbar></toolbar>
+	</div>
+	<div class="row strip-bar">
+		<span class="col-xs-6 col-sm-6 text-bold text-bold">Ingredients</span>
+		<div class="col-xs-6 col-sm-6 text-right">
+			<span>
+				{{recipe.info.cook_time}} <i class="fa fa-clock-o"></i>
+			</span>
+			<span>
+				5 serving 
+			</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12">
+			<span  class="col-xs-12 col-sm-6 padding-10" *ngFor="#ingredient of recipe.ingredients">{{ingredient.qty}} {{ingredient.item}}</span>		
+		</div>
+	</div>
+	<div class="row strip-bar">
+		<span class="col-xs-12 col-sm-12 text-bold"> Direction</span>
+	</div>
+	<div class="row padding-10">
+		<span  class="col-xs-12 col-sm-12 padding-10" *ngFor="#direction of recipe.directions; #i = index"><b>{{i + 1}}.</b> {{direction}}</span>		
+	</div>
+</div>
+<div class="row strip-bar">
+	<span class="col-xs-12 col-sm-12 text-left text-bold  strip-bar">
+		Review	
+	</span>
+</div>
+<div  class="row">
+	<span class="col-xs-12 col-sm-12 text-left">
+		<i class="fa fa-user"></i> Rate and Review
+	</span>
+</div>

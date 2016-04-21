@@ -1,0 +1,24 @@
+[
+{
+    "name": "Vada Paav",
+    "category": "BreakFast,SNACKS",
+    "id": "AA34AA55AS5DF5S5S",
+    "icon": "images/vada-pav.jpg",
+    "recipeBy": "Kunall Chaudhari",
+    "edit" : {
+    	"ingredient" : false
+    },
+    "desc" : "Vada pav, sometimes spelled wada pav or Vada Paav, is a popular spicy vegetarian fast food dish native to the Indian state of Maharashtra. It consists of a batata vada ..."
+  },
+  {
+    "name": "Pani Puri1",
+    "category": "BreakFast,SNACKS",
+    "id": "AA34AA55AS5DF5S5S1",
+    "icon": "images/vada-pav.jpg",
+    "recipeBy": "Priyanka Patil",
+    "edit" : {
+    	"ingredient" : false
+    },
+    "desc": "Pani Puri to tantalize your taste buds. Pani Puris are known as 'Golgappas' in Northern India and as 'Poochkas' in West Bengal. When my favourite ..."
+  }
+]

@@ -1,0 +1,9 @@
+<div>
+	<span>Recipe here</span>
+	<span>Select your favourite recipes</span>
+
+	<ul class="nav nav-pills">
+	  <li  *ngFor="#pill of navpills"><a [routerLink]="['Recipes', {id :pill.target}]">{{pill.name}}({{pill.count}})</a></li>
+	</ul>
+	<recipes-grid class="container-fluid" [category]="category"></recipes-grid>		
+</div>
