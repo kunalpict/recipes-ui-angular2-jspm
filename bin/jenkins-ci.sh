@@ -14,6 +14,7 @@ __DIR__="${BASH_SOURCE%/*}"
 # shellcheck source=bin/setup-node.sh
 source "$__DIR__/_setup-node.sh"
 
-npm cache clean
-npm install --loglevel warn
+npm install -g gulp bower
+npm install
+bower install
 )
