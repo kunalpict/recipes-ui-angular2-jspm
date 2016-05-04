@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class DataService {
   
-    baseUrl: string = '';
+    baseUrl: string = 'https://s3.amazonaws.com/myrecipediary/api';
 
     constructor(private http: Http) { }
     

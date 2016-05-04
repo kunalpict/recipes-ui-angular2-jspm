@@ -16,4 +16,5 @@ source "$__DIR__/_setup-node.sh"
 
 npm cache clean
 npm install --loglevel warn
+gulp build
 )

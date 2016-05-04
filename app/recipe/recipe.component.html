@@ -18,14 +18,16 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12">
-			<span  class="col-xs-12 col-sm-6 padding-10" *ngFor="#ingredient of recipe.ingredients">{{ingredient.qty}} {{ingredient.item}}</span>		
+			<span  class="col-xs-12 col-sm-6 padding-10" *ngFor="#ingredient of recipe.ingredients">{{ingredient.qty}} {{ingredient.item}}</span>
 		</div>
 	</div>
 	<div class="row strip-bar">
 		<span class="col-xs-12 col-sm-12 text-bold"> Direction</span>
 	</div>
 	<div class="row padding-10">
-		<span  class="col-xs-12 col-sm-12 padding-10" *ngFor="#direction of recipe.directions; #i = index"><b>{{i + 1}}.</b> {{direction}}</span>		
+		<span  class="col-xs-12 col-sm-12 padding-10" *ngFor="#direction of recipe.directions; #i = index"><b>{{i + 1}}.</b> {{direction}}</span>
+		<textarea rows="4" class="col-xs-12 col-sm-12 padding-10" *ngFor="#direction of recipe.directions; #i = index"><b>{{i + 1}}.</b> {{direction}}
+		</textarea>		
 	</div>
 </div>
 <div class="row strip-bar">

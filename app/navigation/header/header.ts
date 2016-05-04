@@ -15,7 +15,6 @@ import { DataService } from '../../shared/services/data.service';
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <img src="assets/images/people.png" alt="logo">
               <span class="app-title">Recipes Catalogs</span>
             </div>
         </nav>

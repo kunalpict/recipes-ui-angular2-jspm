@@ -17,6 +17,8 @@ System.config({
 
   map: {
     "angular2": "npm:angular2@2.0.0-beta.14",
+    "es6-shim": "github:es-shims/es6-shim@0.35.0",
+    "reflect-metadata": "npm:reflect-metadata@0.1.3",
     "rxjs": "npm:rxjs@5.0.0-beta.5",
     "typescript": "npm:typescript@1.8.9",
     "github:jspm/nodelibs-assert@0.1.0": {
