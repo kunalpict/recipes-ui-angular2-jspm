@@ -1,42 +1,63 @@
 <div class="">
-	<div class="row">
-	  <card [info]="recipe.info"></card>		
-	</div>
-	<div class="row">
-		<toolbar></toolbar>
-	</div>
-	<div class="row strip-bar">
-		<span class="col-xs-6 col-sm-6 text-bold text-bold">Ingredients</span>
-		<div class="col-xs-6 col-sm-6 text-right">
-			<span>
-				{{recipe.info.cook_time}} <i class="fa fa-clock-o"></i>
+    <div class="row">
+        <button class="pull-right" *ngIf="isEdit" (click)="edit()">
+            edit
+        </button>
+        <button class="pull-right" *ngIf="isSave" (click)="save()">
+            save
+        </button>
+    </div>
+    <div class="row">
+        <card [info]="recipe.info" [isNew]="isNew"></card>
+    </div>
+    <div class="row" *ngIf="false">
+        <toolbar></toolbar>
+    </div>
+    <div class="row strip-bar">
+        <span class="col-xs-6 col-sm-6 text-bold text-bold">Ingredients</span>
+        <div class="col-xs-6 col-sm-6 text-right">
+            <span>
+				<input [(ngModel)]="recipe.info.cook_time" placeholder="time">
+				<i class="fa fa-clock-o"></i>
 			</span>
-			<span>
+            <span>
 				5 serving 
 			</span>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 col-sm-12">
-			<span  class="col-xs-12 col-sm-6 padding-10" *ngFor="#ingredient of recipe.ingredients">{{ingredient.qty}} {{ingredient.item}}</span>
-		</div>
-	</div>
-	<div class="row strip-bar">
-		<span class="col-xs-12 col-sm-12 text-bold"> Direction</span>
-	</div>
-	<div class="row padding-10">
-		<span  class="col-xs-12 col-sm-12 padding-10" *ngFor="#direction of recipe.directions; #i = index"><b>{{i + 1}}.</b> {{direction}}</span>
-		<textarea rows="4" class="col-xs-12 col-sm-12 padding-10" *ngFor="#direction of recipe.directions; #i = index"><b>{{i + 1}}.</b> {{direction}}
-		</textarea>		
-	</div>
+            <span>
+				<button (click)="addIngredients(recipe.ingredients)">add</button>
+			</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <span class="col-xs-12 col-sm-6 padding-10" *ngFor="#ingredient of recipe.ingredients">
+			<input [(ngModel)]="ingredient.qty"
+			 placeholder="qty">
+			<input [(ngModel)]="ingredient.ingredient"
+			 placeholder="ingredient name">
+			</span>
+        </div>
+    </div>
+    <div class="row strip-bar">
+        <span class="col-xs-12 col-sm-12 text-bold"> Direction</span>
+        <span class="pull-right">
+			<button (click)="addDescription(recipe.directions)">
+				Add Direction
+			</button>
+		</span>
+    </div>
+    <div class="row padding-10">
+        <span class="col-xs-12 col-sm-12 padding-10" *ngFor="#direction of recipe.directions; #i = index" *ngIf="false"><b>{{direction.step}}.</b> {{direction.direction}}</span>
+        <textarea rows="4" class="col-xs-12 col-sm-12 padding-10" *ngFor="#direction of recipe.directions; #i = index" [(ngModel)]="direction.direction" placeholder="step {{i}}"></textarea>
+    </div>
 </div>
 <div class="row strip-bar">
-	<span class="col-xs-12 col-sm-12 text-left text-bold  strip-bar">
+    <span class="col-xs-12 col-sm-12 text-left text-bold  strip-bar">
 		Review	
 	</span>
 </div>
-<div  class="row">
-	<span class="col-xs-12 col-sm-12 text-left">
+<div class="row">
+    <span class="col-xs-12 col-sm-12 text-left">
 		<i class="fa fa-user"></i> Rate and Review
 	</span>
 </div>

@@ -13,6 +13,7 @@ import { RouterLink} from 'angular2/router';
 export class CardComponent {
 	
 	  @Input() info;
+    @Input() isNew;
 
     constructor(private dataService: DataService) {
       
