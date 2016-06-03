@@ -2,7 +2,7 @@ import { Component } from 'angular2/core';
 import { CORE_DIRECTIVES } from 'angular2/common';
 import { RouterLink, RouteParams } from 'angular2/router';
 import { DataService } from '../shared/services/data.service';
-import { RecipesGridComponent } from './component/recipes.grid';
+import { RecipesGridComponent } from './component/recipes.grid.component';
 
 @Component({ 
   selector: 'recipes',

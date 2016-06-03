@@ -1,7 +1,7 @@
 import { Component, Input} from 'angular2/core';
 import { CORE_DIRECTIVES } from 'angular2/common';
 import { DataService } from '../shared/services/data.service';
-import { RatingComponent } from '../rating/rating';
+import { RatingComponent } from '../rating/rating.component';
 import { RouterLink} from 'angular2/router';
 
 @Component({ 

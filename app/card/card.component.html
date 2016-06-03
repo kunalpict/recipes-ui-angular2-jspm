@@ -1,20 +1,25 @@
-<div  class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-push-6 text-center ">
-	<img class="img-responsive img-thumbnail" src="{{info.image}}" alt="Spinach Enchiladas" title="Spinach Enchiladas" itemprop="image">
-</div>	
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-push-6 text-center" *ngIf="!isNew">
+    <img class="img-responsive img-thumbnail" src="{{info.image}}" alt="Spinach Enchiladas" title="Spinach Enchiladas" itemprop="image">
+</div>
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-push-6 text-center" *ngIf="isNew">
+    <iframe src="http://localhost:3100/ws/" width="100%" height="100%"></iframe>
+</div>
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-pull-6">
-	<span class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		<a [routerLink]="['Recipe', {id :info.id}]" class="recipe-title-detail" *ngIf="!isNew">{{info.title}}</a>
-		<input [(ngModel)]="info.title"  class="col-xs-9" placeholder="title"  *ngIf="isNew">
-	</span>
-	<span  class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngIf="!isNew">
-		<rating></rating>
-	</span>
-	<span class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngIf="!isNew">
-		<b>Recipe By: </b><span>{{info.user}}</span>
-	</span>
-	<span class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngIf="!isNew">
-		<b>Submitted Date: </b><span>{{info.date}}</span>
-	</span>
-	<span class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngIf="!isNew">{{info.description}}</span>
-	<textarea class="col-xs-12 col-sm-12 col-md-12 col-lg-12" [(ngModel)]="info.description"  placeholder="description"  *ngIf="isNew"></textarea>
+    <span class="col-xs-12">
+			<a [routerLink]="['Recipe', {id :info.id}]" class="recipe-title-detail" *ngIf="!isNew">{{info.title}}</a>
+			<input [(ngModel)]="info.title"  class="col-xs-12" placeholder="title"  *ngIf="isNew">
+		</span>
+    <span class="col-xs-12" *ngIf="!isNew">
+			<rating></rating>
+		</span>
+    <span class="col-xs-12" *ngIf="!isNew">
+			<b>Recipe By: </b><span>{{info.user}}</span>
+    </span>
+    <span class="col-xs-12" *ngIf="!isNew">
+			<b>Submitted Date: </b><span>{{info.date}}</span>
+    </span>
+    <span class="col-xs-12" *ngIf="!isNew">{{info.description}}</span>
+    <span class="col-xs-12" *ngIf="isNew">
+			<textarea class="col-xs-12  edit-recipe-desc" [(ngModel)]="info.description"  placeholder="description"></textarea>
+		</span>
 </div>

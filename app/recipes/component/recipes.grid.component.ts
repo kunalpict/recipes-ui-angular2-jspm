@@ -1,7 +1,7 @@
 import { Component, Input} from 'angular2/core';
 import { CORE_DIRECTIVES } from 'angular2/common';
 import { DataService } from '../../shared/services/data.service';
-import { CardComponent } from '../../card/card';
+import { CardComponent } from '../../card/card.component';
 
 @Component({ 
   selector: 'recipes-grid',

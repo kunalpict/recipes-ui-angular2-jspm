@@ -1,5 +1,5 @@
 import { Injectable } from 'angular2/core';
-import { Http, Response } from 'angular2/http';
+import { Http, Response, Request } from 'angular2/http';
 import { Headers, RequestOptions, RequestMethod } from 'angular2/http';
 
 //Grab everything with import 'rxjs/Rx';
@@ -41,10 +41,31 @@ export class DataService {
             headers: headers,
             method : "POST"
         })
+          .map((res: Response) => res)
+          .catch(this.handleError);
+    }
+
+    login(cred){
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ 
+            headers: headers,
+            method: RequestMethod.Post,
+            url: this.baseUrl + '/user/login',
+            body: JSON.stringify(cred) 
+        });
+        return this.http.request(new Request(options))
           .map((res: Response) => res.json())
           .catch(this.handleError);
     }
     
+
+    create(user){
+        let body = JSON.stringify(user);
+        return this.http.post(this.baseUrl + '/user/create', body)
+          .map((res: Response) => res.json())
+          .catch(this.handleError);
+    }
+
     handleError(error: any) {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');

@@ -4,12 +4,14 @@ import { FORM_PROVIDERS } from 'angular2/common';
 import { ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy } from 'angular2/router';
 import { HTTP_PROVIDERS } from 'angular2/http';
 import { AppComponent } from './app.component';
+import { UserService } from './shared/services/user';
 
 
 bootstrap(AppComponent, [
     ROUTER_PROVIDERS,
     FORM_PROVIDERS,
     HTTP_PROVIDERS,
+    UserService,
     bind(LocationStrategy).toClass(HashLocationStrategy)
 ]).then(
     success => console.log('AppComponent bootstrapped!'),
